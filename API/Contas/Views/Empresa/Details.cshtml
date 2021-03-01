@@ -1,0 +1,35 @@
+﻿@model Contas.Domain.Models.Empresa
+
+
+@{
+    ViewData["Title"] = "Empresas";
+}
+
+<h1>Detalhes da Empresa</h1>
+<hr />
+<div>
+    <dl class="row">
+        <dt class="col-sm-3 mb-2">
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd class="col-sm-9 mb-2">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt class="col-sm-3 mb-2">
+            @Html.DisplayNameFor(model => model.Site)
+        </dt>
+        <dd class="col-sm-9 mb-2">
+            @Html.DisplayFor(model => model.Site)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.QuantidadeFuncionarios)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.QuantidadeFuncionarios)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-info mr-2">Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Voltar para Lista</a>
+</div>

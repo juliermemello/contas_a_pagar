@@ -1,0 +1,68 @@
+<div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+        <form [formGroup]="contaForm" (ngSubmit)="add()">
+            <fieldset>
+                <legend class="my-3 mb-3">Adicionar Nova Conta a Pagar</legend>
+
+                <div class="row mb-3" *ngIf="submitted">
+                    <div class="row col-12 alert alert-success" role="alert" *ngIf="!withError">
+                        Conta a pagar adicionada com sucesso.
+                    </div>
+                    <div class="row col-12 alert alert-danger" role="alert" *ngIf="withError">
+                        Não foi possível adicionar a conta a pagar.
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label for="nome" class="col-sm-3 col-form-label text-right">Nome</label>
+                    <input type="text" id="nome" name="nome" class="col-sm-9 form-control" maxlength="255"
+                        formControlName="nome">
+
+                    <div class="col offset-md-3 align-self-end text-left" *ngIf="withControlError('nome')">
+                        <small class="text-danger" *ngIf="withControlError('nome', 'required')">
+                            Este campo é obrigatório.
+                        </small>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="valor" class="col-sm-3 col-form-label text-right">Valor Original</label>
+                    <input type="number" id="valor" name="valor" class="col-sm-5 form-control" formControlName="valor">
+
+                    <div class="col offset-md-3 align-self-end text-left" *ngIf="withControlError('valor')">
+                        <small class="text-danger" *ngIf="withControlError('valor', 'required')">
+                            Este campo é obrigatório.
+                        </small>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="datavencimento" class="col-sm-3 col-form-label text-right">Data de Vencimento</label>
+                    <input type="date" id="datavencimento" name="datavencimento" class="col-sm-5 form-control"
+                        formControlName="datavencimento">
+
+                    <div class="col offset-md-3 align-self-end text-left" *ngIf="withControlError('datavencimento')">
+                        <small class="text-danger" *ngIf="withControlError('datavencimento', 'required')">
+                            Este campo é obrigatório.
+                        </small>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="datapagamento" class="col-sm-3 col-form-label text-right">Data de Pagamento</label>
+                    <input type="date" id="datapagamento" name="datapagamento" class="col-sm-5 form-control"
+                        formControlName="datapagamento">
+                    
+                    <div class="col offset-md-3 align-self-end text-left" *ngIf="withControlError('datapagamento')">
+                        <small class="text-danger" *ngIf="withControlError('datapagamento', 'required')">
+                            Este campo é obrigatório.
+                        </small>
+                    </div>
+                </div>
+                <div class="col-12 mt-5">
+                    <button class="btn btn-primary mr-5" type="submit" [disabled]="!contaForm.valid">Adicionar</button>
+                    <a class="btn btn-danger" routerLink="/contapagar">Cancelar</a>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div class="col-2"></div>
+</div>

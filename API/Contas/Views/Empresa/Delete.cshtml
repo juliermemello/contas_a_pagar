@@ -1,0 +1,35 @@
+﻿@model Contas.Domain.Models.Empresa
+
+
+@{
+    ViewData["Title"] = "Empresas";
+}
+
+<h1>Apagar Empresa</h1>
+<h3 class="my-2">Você tem certeza que deseja fazer isso?</h3>
+<hr />
+<dl class="row">
+    <dt class="col-sm-3 mb-2">
+        @Html.DisplayNameFor(model => model.Nome)
+    </dt>
+    <dd class="col-sm-9 mb-2">
+        @Html.DisplayFor(model => model.Nome)
+    </dd>
+    <dt class="col-sm-3 mb-2">
+        @Html.DisplayNameFor(model => model.Site)
+    </dt>
+    <dd class="col-sm-9 mb-2">
+        @Html.DisplayFor(model => model.Site)
+    </dd>
+    <dt class="col-sm-3">
+        @Html.DisplayNameFor(model => model.QuantidadeFuncionarios)
+    </dt>
+    <dd class="col-sm-9">
+        @Html.DisplayFor(model => model.QuantidadeFuncionarios)
+    </dd>
+</dl>
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id" />
+    <input type="submit" value="Apagar" class="btn btn-danger mr-2" />
+    <a asp-action="Index" class="btn btn-secondary">Voltar para Lista</a>
+</form>

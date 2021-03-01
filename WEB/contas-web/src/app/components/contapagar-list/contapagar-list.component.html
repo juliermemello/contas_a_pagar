@@ -1,0 +1,26 @@
+<legend class="my-3 mb-3">Lista de Contas a Pagar</legend>
+<table class="table table-sm table-dark table-striped table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Valor Original</th>
+            <th scope="col">Valor Corrigido</th>
+            <th scope="col">Dias Em Atraso</th>
+            <th scope="col">Data Pagamento</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let conta of contas">
+            <th scope="row">{{ conta.nome }}</th>
+            <td>{{ conta.valor | currency:'BRL':'':'0.2-2':'pt' }}</td>
+            <td>{{ conta.valorCorrigido | currency:'BRL':'':'0.2-2':'pt' }}</td>
+            <td>{{ conta.diasAtrasado }}</td>
+            <td>{{ conta.dataPagamento | date:'dd/MM/YYYY' }}</td>
+            <td>
+                <button type="button" class="btn btn-primary mr-3" (click)="detail(conta.id)"><i class="fa fa-eye"></i></button>
+                <button type="button" class="btn btn-danger" (click)="delete(conta.id)"><i class="fa fa-trash"></i></button>
+            </td>
+        </tr>
+    </tbody>
+</table>

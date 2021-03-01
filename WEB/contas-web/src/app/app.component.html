@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Contas a Pagar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsContaPagar"
+      aria-controls="navbarsContaPagar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsContaPagar">
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" routerLink="contapagar">Lista</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="contapagar/add">Adicionar</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main class="container text-center my-3 py-5 px-3">
+  <router-outlet></router-outlet>
+</main>

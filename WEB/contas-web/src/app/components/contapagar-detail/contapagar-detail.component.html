@@ -1,0 +1,61 @@
+<div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+        <form>
+            <fieldset>
+                <legend class="my-3 mb-3">Detalhes da Conta a Pagar</legend>
+
+                <div class="row mb-3" *ngIf="notFound">
+                    <div class="col alert alert-danger" role="alert">
+                        Não foi possível encontrar a conta selecionada.
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label class="col-sm-3 col-form-label text-right">Nome</label>
+                    <input type="text" class="col-sm-9 form-control" readonly value="{{ conta.nome }}">
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-3 col-form-label text-right">Valor Original</label>
+                    <input type="text" class="col-sm-5 form-control" readonly value="{{ conta.valor | currency:'BRL':'':'0.2-2':'pt' }}">
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-3 col-form-label text-right">Valor Corrigido</label>
+                    <input type="text" class="col-sm-5 form-control" readonly value="{{ conta.valorCorrigido | currency:'BRL':'':'0.2-2':'pt' }}">
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-3 col-form-label text-right">Data de Vencimento</label>
+                    <input type="text" class="col-sm-5 form-control" readonly value="{{ conta.dataVencimento | date:'dd/MM/YYYY' }}">
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-3 col-form-label text-right">Data de Pagamento</label>
+                    <input type="text" class="col-sm-5 form-control" readonly value="{{ conta.dataPagamento | date:'dd/MM/YYYY' }}">
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-3 col-form-label text-right">Dias de Atraso</label>
+                    <input type="text" class="col-sm-5 form-control" readonly value="{{ conta.diasAtrasado }}">
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-3 col-form-label text-right">Multa</label>
+                    <input type="text" class="col-sm-5 form-control" readonly value="{{ conta.multa | currency:'BRL':'':'0.2-2':'pt' }}">
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-3 col-form-label text-right">Valor da Multa</label>
+                    <input type="text" class="col-sm-5 form-control" readonly value="{{ conta.multaValor | currency:'BRL':'':'0.2-2':'pt' }}">
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-3 col-form-label text-right">Juros</label>
+                    <input type="text" class="col-sm-5 form-control" readonly value="{{ conta.juros | currency:'BRL':'':'0.2-2':'pt' }}">
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-3 col-form-label text-right">Valor dos Juros</label>
+                    <input type="text" class="col-sm-5 form-control" readonly value="{{ conta.jurosValor | currency:'BRL':'':'0.2-2':'pt' }}">
+                </div>
+                <div class="col-12 mt-5">
+                    <a class="btn btn-primary" routerLink="/contapagar">Voltar</a>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div class="col-2"></div>
+</div>
